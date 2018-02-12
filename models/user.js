@@ -14,6 +14,6 @@ const UserSchema = new Schema({
 });
 
 // allows us to use the unique validator
-schema.plugin(mongooseUniqueValidator);
+UserSchema.plugin(mongooseUniqueValidator);
 
 module.exports = mongoose.model('User', UserSchema);
