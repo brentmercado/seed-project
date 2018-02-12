@@ -3,7 +3,13 @@ var router = express.Router();
 const User = require('../models/user');
 
 router.get('/', function (req, res, next) {
-    res.render('node');
+   // fetch data from the database
+   User.findOne({}, (err,doc) => {
+      if (err) {
+         return res.send('Error!')
+      }
+      res.render('node', {email: doc.email});
+   });
 });
 
 // router.get('/message/:msg', (req, res, next) => {
