@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
+import { Message } from "./message/message.model";
+
 @Component({
     selector: 'my-app',
     templateUrl: './app.component.html'
 })
 export class AppComponent {
-   message = {
-      content: 'A message',
-      author: 'Brent'
-   };
+   message: Message = new Message('Some message', 'Brent');
 }
