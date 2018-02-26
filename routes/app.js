@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 // const User = require('../models/user');
 
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res, next) {     // get is to get information from server
    res.render('index');
    // fetch data from the database
    // User.findOne({}, (err,doc) => {
