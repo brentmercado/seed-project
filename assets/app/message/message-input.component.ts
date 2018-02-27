@@ -13,9 +13,15 @@ import { MessageService } from "./message.service";
 export class MessageInputComponent {
 
    constructor(private messageService: MessageService) {}
+
    onSubmit(form: NgForm) {
       const message = new Message(form.value.content, 'Brent');
-      this.messageService.addMessage(message);
+      this.messageService.addMessage(message)
+         .subscribe(
+            data => console.log(data),    // success case
+            error => console.error(error)    // error case
+            // a complete function for complete case
+         );
       form.resetForm();
    }
 }
